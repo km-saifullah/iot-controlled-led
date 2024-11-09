@@ -4,7 +4,7 @@ import io from "socket.io-client";
 import Image from "./components/Image";
 import led from "/led.png";
 
-const socket = io("http://localhost:3000");
+const socket = io("http://localhost:3000", { transports: ["websocket"] });
 
 function App() {
   const [ledStatus, setLedStatus] = useState("off");
